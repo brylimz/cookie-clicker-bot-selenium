@@ -30,13 +30,13 @@ event_times = driver.find_elements(By.CSS_SELECTOR, ".event-widget time")
 #     print(b)
 events = {}
 
-event_names = driver.find_elements(By.CSS_SELECTOR, ".li a")
+event_names = driver.find_elements(By.CSS_SELECTOR, ".event-widget li a")
 for n in range(len(event_times)):
     events[n] = {
         "time": event_times[n].text,
         "name": event_names[n].text
     }
-
+print(events)
 
 driver.close()
 driver.quit()
