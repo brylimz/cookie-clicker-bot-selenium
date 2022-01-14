@@ -12,5 +12,13 @@ driver.get("https://en.wikipedia.org/wiki/Main_Page")
 # for n in total:
 #     print(n.text)
 total = driver.find_elements(By.CSS_SELECTOR, "#articlecount a")
-for n in total[0:1]:
-    print(n.text)
+# for n in total[0:1]:
+#     n.click()
+#     print(n.text)
+all_portals = driver.find_elements(By.LINK_TEXT, "All portals")
+# for n in all_portals:
+#     n.click()
+search = driver.find_elements(By.NAME, "search")
+for n in search:
+    n.send_keys("Python")
+    n.send_keys(Keys.ENTER)
